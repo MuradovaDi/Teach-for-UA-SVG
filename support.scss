@@ -1,0 +1,151 @@
+%light {
+    font-family: 'Basis Grotesque Pro Light';
+    font-style: normal;
+    font-weight: 300;
+}
+
+%regular {
+    font-family: 'Basis Grotesque Pro';
+    font-style: normal;
+    font-weight: 400;
+}
+
+%bold{
+    font-family: 'Basis Grotesque Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+}
+
+$border: 1px solid rgba($color: #000000, $alpha: 0.15);
+
+body{
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+    color: #000000;
+}
+
+.container{
+    width: 100%;
+    box-sizing: boarding-box;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.support__container{
+    padding: 150px 0px 150px 210px;
+    display: flex;
+}
+
+.heading__sub{
+    @extend %bold;
+    text-transform: uppercase;
+    color: #0536FC;
+    opacity: 0.9;
+}
+
+.heading__main{
+    @extend %bold;
+    font-size: 36px;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin: 30px 0px 70px 0px;
+}
+
+.heading__paragraph{
+    @extend %light;
+    opacity: 0.35;
+}
+
+.support__accordion{
+    margin-top: 250px;
+    margin-left: 75px;
+}
+
+.accordion__panel{
+    @extend %regular;
+    max-width: 445px;
+    opacity: 0.6;
+    display: none;
+    overflow: hidden;
+    text-transform: none;
+    margin-top: 70px;
+}   
+
+.accordion__icon{
+    padding: 0px 7px;
+}
+
+.accordion__minus{
+    width: 15px;
+    height: 1.4px;
+    background-color: #000000;
+    display: none;
+}
+
+.accordion__btn{
+    border: none;
+    border-top: $border;
+    border-bottom: $border;
+    background: none;
+    padding-top: 30px;
+    padding-bottom: 70px;
+   @extend %bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.accordion__btn_active{
+    .accordion__panel, .accordion__minus{
+        display: block;
+    }
+    .accordion__plus{
+        display: none;
+    }
+}
+
+
+
+
+@media screen and (max-width: 1070px){
+    .support__container{
+        padding: 150px 0px 150px 100px;
+        display: block;
+    }
+
+    .support__accordion {
+        margin-top: 50px;
+        width: 75vw;
+    }
+
+    .accordion__panel{
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .support__container {
+        padding: 50px 0px 50px 50px;
+    }
+    
+    .heading__main {
+        margin: 30px 0px 30px 0px;
+    }
+    
+    .support__accordion{
+        margin-left: 0px;
+    }
+
+    .accordion__btn{
+        padding-bottom: 30px;
+    }
+    .accordion__panel {
+        margin-top: 25px;
+    }
+}
